@@ -54,6 +54,9 @@ func RunTest() {
 func main() {
 	log.Println("Starting benchark")
 	log.Println("Numbers of CPU " + strconv.Itoa(runtime.NumCPU()))
+	// In Go version 1.5 or higher this string is redundant. Added for backward compatibility
+	// and clarity.
+	log.Println("GOMAXPROC:" + strconv.Itoa(runtime.GOMAXPROCS(runtime.NumCPU())))
 	log.Println("Process PID: " + strconv.Itoa(pid))
 	time.Sleep(time.Second * 10)
 	fmt.Scan()
